@@ -420,16 +420,16 @@ int main(){
 	unsigned int add_dds_config = 2; // a + b
 	
 	// write config
-	write_lw(&dds_config,ASP_DDS_LEFT_S1_CONFIG_BASE,2);
-	write_lw(&dds_config,ASP_DDS_RIGHT_S1_CONFIG_BASE,2);
+	write_lw(dds_config,ASP_DDS_LEFT_S1_CONFIG_BASE,2);
+	write_lw(dds_config,ASP_DDS_RIGHT_S1_CONFIG_BASE,2);
 	
 	// add config
 	write_lw(&add_dds_config,ASP_ADD_LEFT_DDS_BASE,1);
 	write_lw(&add_dds_config,ASP_ADD_RIGHT_DDS_BASE,1);
 
 	// write table
-	write_lw(&sin,ASP_DDS_LEFT_S0_TABLE_BASE,4096);
-	write_lw(&sin,ASP_DDS_RIGHT_S0_TABLE_BASE,4096);
+	write_lw((unsigned int *)sin,ASP_DDS_LEFT_S0_TABLE_BASE,4096);
+	write_lw((unsigned int *)sin,ASP_DDS_RIGHT_S0_TABLE_BASE,4096);
 	
 	return 0;
 }
