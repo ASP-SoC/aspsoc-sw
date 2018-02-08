@@ -25,7 +25,7 @@ int main(){
     usleep(SLEEP);
 	
 	led_data = ~led_data;
-    write_lW(&led_data,PIO_LEDS_BASE,1);
+    write_lw(&led_data,PIO_LEDS_BASE,1);
 
     rotate_display_hex(text_led,sizeof(text_led));
   }
