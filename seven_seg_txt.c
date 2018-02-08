@@ -5,7 +5,7 @@
 #include "ARM_A9_HPS_bridges.h" // block addresses
 #include "lw_bridge.h"
 
-#define SLEEP 100
+#define SLEEP 800000
 
 void rotate_display_hex(unsigned char *text, int len);
 
@@ -20,7 +20,7 @@ int main(){
 	write_lw(&seven_seg2,PIO_HEX3_5_BASE,1);
 	
 	while(1){ // infinite loop
-    msleep(SLEEP);
+    usleep(SLEEP);
 
     rotate_display_hex(text_led,sizeof(text_led));
   }
